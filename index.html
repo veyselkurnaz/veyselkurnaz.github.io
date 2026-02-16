@@ -3,237 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medieval Dice - Rise from Peasant to King</title>
+    <title>Medieval Dice - iOS App Store Preview</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4af37;
-            --wood-dark: #2a1b0e;
-            --wood-light: #5d4037;
-            --parchment: #f3e5ab;
-            --text-color: #1a1a1a;
+            --bg-color: #ffffff;
+            --secondary-bg: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #0071e3;
+            --card-radius: 20px;
+            --btn-radius: 980px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: 'IM Fell English', serif;
-            background-color: var(--wood-dark);
-            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
-            color: var(--parchment);
-            line-height: 1.6;
-            text-align: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
         }
 
-        h1, h2, h3, .btn {
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 0 20px;
+        }
+
+        .nav-content {
+            max-width: 980px;
+            margin: 0 auto;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 20px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-blue);
         }
 
         /* Hero Section */
-        header {
-            padding: 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('medievalDice-1.jpeg');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 4px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        .hero {
+            max-width: 980px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px; /* iOS Icon Squircle */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            object-fit: cover;
+            background-color: #eee;
         }
 
         h1 {
-            font-size: 3.5rem;
-            color: var(--gold);
-            text-shadow: 3px 3px 0px #000;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        /* Button Design */
-        .btn {
-            display: inline-block;
-            background: linear-gradient(180deg, #ffd700, #b8860b);
-            color: #2a1b0e;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 1.2rem;
-            border: 2px solid #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px var(--gold);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px var(--gold);
-        }
-
-        /* Gallery / Features */
-        .features {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
             font-size: 2.5rem;
-            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--btn-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .app-store-btn:hover {
+            background-color: #0077ed;
+        }
+
+        .app-store-btn svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* Screenshot Gallery (Horizontal Scroll) */
+        .gallery-container {
+            margin: 60px 0;
+            overflow-x: auto;
+            padding: 20px 0;
+            /* Hide scrollbar */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .gallery-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+            padding: 0 max(20px, calc((100vw - 980px) / 2));
+            width: max-content;
+        }
+
+        .screenshot {
+            width: 280px;
+            height: 500px; /* iPhone aspect ratio approx */
+            background-color: var(--secondary-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Feature Grid - "Bento" Style */
+        .features {
+            max-width: 980px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 40px;
-            text-shadow: 2px 2px 4px #000;
-            border-bottom: 2px solid var(--wood-light);
-            display: inline-block;
-            padding-bottom: 10px;
+            text-align: left;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
 
         .card {
-            background-color: var(--wood-light);
-            border: 2px solid var(--gold);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
+            background-color: var(--secondary-bg);
+            border-radius: var(--card-radius);
+            padding: 30px;
+            transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            display: block;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .card-text {
-            padding: 20px;
-            background-color: #e6d5a7;
-            color: #2a1b0e;
+            transform: scale(1.02);
         }
 
         .card-title {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 10px;
-            color: #5d4037;
+            color: var(--text-primary);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Privacy Policy Section */
+        .privacy-section {
+            background-color: var(--secondary-bg);
+            padding: 80px 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .privacy-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .privacy-content h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .privacy-content h3 {
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .privacy-content p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .privacy-content ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
 
         /* Footer */
         footer {
-            background-color: #1a120b;
+            background-color: var(--bg-color);
             padding: 40px 20px;
-            color: #888;
-            font-size: 0.9rem;
-            border-top: 2px solid var(--gold);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-top: 1px solid #e5e5e5;
         }
-        
+
         footer a {
-            color: var(--gold);
+            color: var(--accent-blue);
             text-decoration: none;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .tagline { font-size: 1.2rem; }
+            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="hero-content">
-            <h1>MEDIEVAL DICE</h1>
-            <p class="tagline">"Rise from Peasant to King"</p>
-            <a href="https://play.google.com/store/apps/details?id=com.kurnazgames.medievaldice" class="btn">DOWNLOAD ON GOOGLE PLAY</a>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Medieval Dice</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#privacy">Privacy</a>
+            </div>
         </div>
+    </nav>
+
+    <header class="hero">
+        <img src="medievalDice.jpeg" alt="App Icon" class="app-icon">
+        <h1>Medieval Dice</h1>
+        <p class="subtitle">Rise from Peasant to King</p>
+        
+        <a href="#" class="app-store-btn">
+            <svg viewBox="0 0 384 512" title="apple">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z" />
+            </svg>
+            Download on the App Store
+        </a>
     </header>
 
-    <section class="features">
-        <h2 class="section-title">GAME FEATURES</h2>
+    <section class="gallery-container">
+        <div class="gallery">
+            <div class="screenshot"><img src="medievalDice-1.jpeg" alt="Screenshot 1"></div>
+            <div class="screenshot"><img src="medievalDice-2.jpeg" alt="Screenshot 2"></div>
+            <div class="screenshot"><img src="medievalDice-3.jpeg" alt="Screenshot 3"></div>
+            <div class="screenshot"><img src="medievalDice-4.jpeg" alt="Screenshot 4"></div>
+            <div class="screenshot"><img src="medievalDice-5.jpeg" alt="Screenshot 5"></div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-header">What's New</h2>
         
         <div class="grid">
-             <div class="card">
-                <img src="medievalDice.jpeg" alt="Epic Campaign">
-                <div class="card-text">
-                    <h3 class="card-title">EPIC JOURNEY AWAITS</h3>
-                    <p>Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
-                </div>
-            </div>
-             <div class="card">
-                <img src="medievalDice-1.jpeg" alt="Epic Campaign">
-                <div class="card-text">
-                    <h3 class="card-title">EPIC JOURNEY AWAITS</h3>
-                    <p>Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
-                </div>
-            </div>
             <div class="card">
-                <img src="medievalDice-2.jpeg" alt="Epic Campaign">
-                <div class="card-text">
-                    <h3 class="card-title">EPIC JOURNEY AWAITS</h3>
-                    <p>Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
-                </div>
+                <h3 class="card-title">Epic Campaign</h3>
+                <p class="card-text">Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
             </div>
+            
             <div class="card">
-                <img src="medievalDice-3.jpeg" alt="Epic Campaign">
-                <div class="card-text">
-                    <h3 class="card-title">EPIC JOURNEY AWAITS</h3>
-                    <p>Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
-                </div>
+                <h3 class="card-title">PvP Battles</h3>
+                <p class="card-text">Test your luck and strategy in thrilling duels. Defeat your foes in real-time matches.</p>
             </div>
 
             <div class="card">
-                <img src="medievalDice-2.jpeg" alt="PvP Battles">
-                <div class="card-text">
-                    <h3 class="card-title">HIGH STAKES BATTLES</h3>
-                    <p>Test your luck and strategy in thrilling duels. Defeat your foes and claim the prize!</p>
-                </div>
+                <h3 class="card-title">Strategic Gameplay</h3>
+                <p class="card-text">Merchant's Dice, Knight's Dice... Each die has unique powers. Choose wisely.</p>
             </div>
 
             <div class="card">
-                <img src="medievalDice-4.jpeg" alt="Strategic Dice">
-                <div class="card-text">
-                    <h3 class="card-title">STRATEGIC DICE</h3>
-                    <p>Merchant's Dice, Knight's Dice... Each die has unique powers. Choose wisely to defeat your foes.</p>
-                </div>
-            </div>
-
-             <div class="card">
-                <img src="medievalDice-5.jpeg" alt="Daily Quests">
-                <div class="card-text">
-                    <h3 class="card-title">DAILY QUESTS</h3>
-                    <p>Complete new tasks every day to earn rewards and build your fortune.</p>
-                </div>
+                <h3 class="card-title">Daily Rewards</h3>
+                <p class="card-text">Complete new quests every day to earn rewards and build your medieval fortune.</p>
             </div>
         </div>
     </section>
 
+    <section id="privacy" class="privacy-section">
+        <div class="privacy-content">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: February 16, 2026</p>
+            
+            <p>At Medieval Dice, we take your privacy seriously. This Privacy Policy explains how "Medieval Dice" ("we", "us", or "our") collects, uses, and discloses information about you.</p>
+
+            <h3>1. Data Collection</h3>
+            <p>We do not collect any personal data that identifies you directly. We may collect anonymous gameplay data to improve the user experience, such as:</p>
+            <ul>
+                <li>Device type and operating system</li>
+                <li>Game crash reports</li>
+                <li>General usage statistics</li>
+            </ul>
+
+            <h3>2. Third-Party Services</h3>
+            <p>We may use third-party services (such as ad networks or analytics providers) that may collect information used to identify you. Please refer to their privacy policies.</p>
+
+            <h3>3. Children's Privacy</h3>
+            <p>We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we will immediately delete this from our servers.</p>
+
+            <h3>4. Contact Us</h3>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:kurnazbusiness@gmail.com">kurnazbusiness@gmail.com</a>.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Medieval Dice. All Rights Reserved.</p>
-        <p><br>Contact: kurnazbusiness@gmail.com</p>
+        <p>&copy; 2026 Medieval Dice. All rights reserved.</p>
+        <p style="margin-top:10px;">
+            <a href="#">Terms of Use</a> | <a href="#privacy">Privacy Policy</a>
+        </p>
     </footer>
 
 </body>
