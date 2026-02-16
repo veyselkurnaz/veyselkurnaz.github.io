@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Dice - Rise from Peasant to King</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --wood-dark: #2a1b0e;
+            --wood-light: #5d4037;
+            --parchment: #f3e5ab;
+            --text-color: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'IM Fell English', serif;
+            background-color: var(--wood-dark);
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            color: var(--parchment);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        h1, h2, h3, .btn {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('medievalDice-1.jpeg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 4px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            text-shadow: 3px 3px 0px #000;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Button Design */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(180deg, #ffd700, #b8860b);
+            color: #2a1b0e;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px var(--gold);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--gold);
+        }
+
+        /* Gallery / Features */
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px #000;
+            border-bottom: 2px solid var(--wood-light);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--wood-light);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .card-text {
+            padding: 20px;
+            background-color: #e6d5a7;
+            color: #2a1b0e;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #5d4037;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a120b;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--gold);
+        }
+        
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>MEDIEVAL DICE</h1>
+            <p class="tagline">"Rise from Peasant to King"</p>
+            <a href="https://play.google.com/store/apps/details?id=com.kurnazgames.medievaldice" class="btn">DOWNLOAD ON GOOGLE PLAY</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title">GAME FEATURES</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="medievalDice-3.jpeg" alt="Epic Campaign">
+                <div class="card-text">
+                    <h3 class="card-title">EPIC JOURNEY AWAITS</h3>
+                    <p>Start at the village tavern, explore dangerous realms, and rise to power. Your adventure begins now.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="medievalDice-2.jpeg" alt="PvP Battles">
+                <div class="card-text">
+                    <h3 class="card-title">HIGH STAKES BATTLES</h3>
+                    <p>Test your luck and strategy in thrilling duels. Defeat your foes and claim the prize!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="medievalDice-4.jpeg" alt="Strategic Dice">
+                <div class="card-text">
+                    <h3 class="card-title">STRATEGIC DICE</h3>
+                    <p>Merchant's Dice, Knight's Dice... Each die has unique powers. Choose wisely to defeat your foes.</p>
+                </div>
+            </div>
+
+             <div class="card">
+                <img src="medievalDice-5.jpeg" alt="Daily Quests">
+                <div class="card-text">
+                    <h3 class="card-title">DAILY QUESTS</h3>
+                    <p>Complete new tasks every day to earn rewards and build your fortune.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Medieval Dice. All Rights Reserved.</p>
+        <p><br>Contact: kurnazbusiness@gmail.com</p>
+    </footer>
+
+</body>
+</html>
